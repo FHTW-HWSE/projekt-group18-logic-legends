@@ -110,7 +110,7 @@ Then: eine Fehlermeldung wird ausgegeben <br/>
 When: es wurde erfolgreich eine Liste mit Namen oder eine Fehlermeldung ausgegeben <br/>
 Then: das System kehrt wieder in den Status “Hauptmenü” zurück <br/>
 
-
+TODO- Nach Eingabe eines Befehls wird die Historie des Terminals gelöscht, sodass immer nur das Resultat des letzten Befehls sichtbar ist.
 ## Requirements
 ### Funktionale Requirements
 - Es muss ein User Interface implementiert werden.
@@ -132,7 +132,7 @@ Then: das System kehrt wieder in den Status “Hauptmenü” zurück <br/>
 - Es soll ein intuitives User-Interface bereitgestellt werden.
 - Der Benutzer soll durch Eingabe von Befehlen zur gewünschten Seite navigieren können.
 - Unplausible Eingaben rufen einen Fehler hervor.
-- Nach Eingabe eines Befehls wird die Historie des Terminals gelöscht, sodass immer nur das Resultat des letzten Befehls sichtbar ist.
+
 
 ### Constraints
 - Abgabe der Requirements bis zum 28.03
