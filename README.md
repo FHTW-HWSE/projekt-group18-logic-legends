@@ -3,7 +3,7 @@ projekt-group18-logic-legends created by GitHub Classroom
 
 ### Projektbeteiligte: Wen Ting Xu, Yasar Sert, Jakob Gridl, Samuel Bißmann
 
-***Projektbeschreibung:***
+### Projektbeschreibung:
 
 HWSE Projekt
 Dieses Programm ist ein Patientenmanagementsystem für eine Notaufnahme in einem Krankenhaus. 
