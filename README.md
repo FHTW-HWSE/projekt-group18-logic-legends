@@ -13,8 +13,9 @@ Das Programm kann folgende Aufgaben ausführen:
 - Hinzufügen von Patienten, die durch einen Krankenwagen in die Notaufnahme gekommen sind.
 - Entfernen eines Patienten durch eine erfolgreiche Behandlung. Dies muss nach der definierten Priorisierung erfolgen.
 - Nachträgliches Abfragen, welche Sitzpartner ein Patient hat. Sollte kein Sitzplatz zugewiesen worden sein, sind keine Sitzpartner zurück zu geben.
-- Das Programm verfügt über ein User Interface für die einfache Verwaltung von Patienten und Sitzplätzen. Es gibt 25 Sitzplätze in einem 5x5 Muster, und zwischen den Sitzreihen ist genug Platz, um eine Nachverfolgung von Sitznachbarn zu vermeiden.
-**Status**
+- Das Programm verfügt über ein User Interface für die einfache Verwaltung von Patienten und Sitzplätzen. Es gibt 25 Sitzplätze in einem 5x5 Muster, und zwischen den Sitzreihen ist genug Platz, um eine Nachverfolgung von Sitznachbarn zu vermeiden. 
+
+**Status** <br/>
 Das System kann sich in folgenden Status befinden:
 Hauptmenü - Wartet auf Eingabe
 Regulärer Patient einfügen - Ein regulärer Patient wird in die Warteschlange eingefügt
