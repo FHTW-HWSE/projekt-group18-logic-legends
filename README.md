@@ -52,9 +52,9 @@ Als Portier*in des Krankenhauses möchte ich einen Patienten, der mit der Rettun
 
 **Requirements:**
 
-Patient kann über die Eingabemaske in die Prioritätswarteschlange aufgenommen werden (System wechselt in den Status “Priorität Patient einfügen”)
-Wenn der Patient erfolgreich in die Warteschlange aufgenommen wurde, wird KEINE Sitzplatznummer vom System ausgegeben, es wird lediglich eine Bestätigung ausgegeben, dass der Patient hinzugefügt wurde
-Das System wartet nach erfolgreicher Ausgabe der Bestätigung auf neue Eingabe (System befindet sich im Status “Hauptmenü”)
+- Patient kann über die Eingabemaske in die Prioritätswarteschlange aufgenommen werden (System wechselt in den Status “Priorität Patient einfügen”)
+- Wenn der Patient erfolgreich in die Warteschlange aufgenommen wurde, wird KEINE Sitzplatznummer vom System ausgegeben, es wird lediglich eine Bestätigung ausgegeben, dass der Patient hinzugefügt wurde
+- Das System wartet nach erfolgreicher Ausgabe der Bestätigung auf neue Eingabe (System befindet sich im Status “Hauptmenü”)
 
 **Akzeptanzkriterien:**
 
@@ -74,41 +74,41 @@ Then: das System kehrt in das Hauptmenü zurück <br/>
 ### User Story 3: Patient aufrufen
 Als Ärztin/Arzt möchte ich  im User Interface sehen, wer als nächstes an der Reihe ist, um die Person aufrufen und aus der Warteschlange entfernen zu können.
 
-Requirements:
-Nach Eingabe des Befehls zum Aufrufen eines Patienten wird dessen Name im User Interface hervorgehoben angezeigt und er wird aus der Warteschlange entfernt (System wechselt in den Status “Patient aufrufen”)
-Die Daten des aufgerufenen Patienten (Name, Zeitraum des Aufenthalts und Sitznachbarn) werden in einem File gespeichert.
-Der Patient befindet sich nach dem entfernen nicht mehr in der Warteschlange, der nächste Patient wird nun stattdessen im User Interface angezeigt (System befindet sich im Status “Hauptmenü”)
+**Requirements:**
+- Nach Eingabe des Befehls zum Aufrufen eines Patienten wird dessen Name im User Interface hervorgehoben angezeigt und er wird aus der Warteschlange entfernt (System wechselt in den Status “Patient aufrufen”)
+- Die Daten des aufgerufenen Patienten (Name, Zeitraum des Aufenthalts und Sitznachbarn) werden in einem File gespeichert.
+- Der Patient befindet sich nach dem entfernen nicht mehr in der Warteschlange, der nächste Patient wird nun stattdessen im User Interface angezeigt (System befindet sich im Status “Hauptmenü”)
 
-Akzeptanzkriterien:
-Given: das System befindet sich im Hauptmenü und wartet auf eine Eingabe
-When: der User gibt den Befehl ein, den nächsten Patienten aufzurufen
-Then: der Name des nächsten Patienten wird hervorgehoben im User Interface angezeigt und der Patient wird aus der Warteschlange entfernt und befindet sich nicht länger in der Warteschlange
-Given: ein Patient wird aufgerufen
-When: der Patient wurde erfolgreich aus der Warteschlange entfernt
-Then: das System kehrt in den Status “Hauptmenü” zurück und der nächste Patient wird im User Interface angezeigt, außerdem werden die Daten des entfernten Patienten in einem File gespeichert
+**Akzeptanzkriterien:**
+- Given: das System befindet sich im Hauptmenü und wartet auf eine Eingabe <br/>
+When: der User gibt den Befehl ein, den nächsten Patienten aufzurufen <br/>
+Then: der Name des nächsten Patienten wird hervorgehoben im User Interface angezeigt und der Patient wird aus der Warteschlange entfernt und befindet sich nicht länger in der Warteschlange <br/>
+- Given: ein Patient wird aufgerufen <br/>
+When: der Patient wurde erfolgreich aus der Warteschlange entfernt <br/>
+Then: das System kehrt in den Status “Hauptmenü” zurück und der nächste Patient wird im User Interface angezeigt, außerdem werden die Daten des entfernten Patienten in einem File gespeichert <br/>
 
 ### User Story 4: Sitznachbarn ermitteln
 Als Beauftragter für ansteckende Krankheiten möchte ich mir die Namen aller Sitznachbarn eines Patienten ausgeben lassen können, um ein Contact-Tracing zu ermöglichen.
 
-Requirements:
+**Requirements:**
 Nach Eingabe des Befehls zum Ausgeben der Sitznachbarn und des Namen des betreffenden Patienten soll eine Liste mit den Namen der Sitznachbarn ausgegeben werden. (System wechselt in den Status “Sitznachbarn ausgeben”)
 Die Daten der Patienten wurden in einem File gespeichert, dass zum ermitteln der Sitznachbarn ausgelesen wird
 Wurde dem Patienten kein Sitzplatz zugeordnet (Priorität Patienten) werden keine Sitznachbaren ausgegeben
 Nach erfolgreicher Ausgabe wartet das System auf eine neue Eingabe (System befindet sich im Status “Hauptmenü”)
 
-Akzeptanzkriterien:
-Given: das System befindet sich im Hauptmenü
-When: der Befehl für das Ausgeben der Sitznachbarn wird eingegeben
-Then: eine Eingabeaufforderung fragt nach dem Namen des Betroffenen
-Given: das System fragt nach dem Namen des gewünschten Patienten
-When: es wird ein korrekter Name eingegeben
-Then: das System gibt eine Liste mit den Namen der Personen aus, neben denen der Betroffene gesessen ist
-Given: das System fragt nach dem Namen des gewünschten Patienten
-When: es wird ein ungültiger Name eingegeben oder dem Patienten wurde kein Sitzplatz zugewiesen
-Then: eine Fehlermeldung wird ausgegeben
-Given: es wurde nach den Sitznachbarn eines Patienten gefragt
-When: es wurde erfolgreich eine Liste mit Namen oder eine Fehlermeldung ausgegeben
-Then: das System kehrt wieder in den Status “Hauptmenü” zurück
+**Akzeptanzkriterien:**
+- Given: das System befindet sich im Hauptmenü <br/>
+When: der Befehl für das Ausgeben der Sitznachbarn wird eingegeben <br/>
+Then: eine Eingabeaufforderung fragt nach dem Namen des Betroffenen <br/>
+- Given: das System fragt nach dem Namen des gewünschten Patienten <br/>
+When: es wird ein korrekter Name eingegeben <br/>
+Then: das System gibt eine Liste mit den Namen der Personen aus, neben denen der Betroffene gesessen ist <br/>
+- Given: das System fragt nach dem Namen des gewünschten Patienten <br/>
+When: es wird ein ungültiger Name eingegeben oder dem Patienten wurde kein Sitzplatz zugewiesen <br/>
+Then: eine Fehlermeldung wird ausgegeben <br/>
+- Given: es wurde nach den Sitznachbarn eines Patienten gefragt <br/>
+When: es wurde erfolgreich eine Liste mit Namen oder eine Fehlermeldung ausgegeben <br/>
+Then: das System kehrt wieder in den Status “Hauptmenü” zurück <br/>
 
 
 ## Requirements
