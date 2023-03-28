@@ -5,7 +5,6 @@ projekt-group18-logic-legends created by GitHub Classroom
 
 ### Projektbeschreibung:
 
-HWSE Projekt
 Dieses Programm ist ein Patientenmanagementsystem für eine Notaufnahme in einem Krankenhaus. 
 Es priorisiert Patienten basierend auf der Art ihrer Ankunft und weist ihnen Sitzplätze zu, um die Nachverfolgung von Sitznachbarn zu ermöglichen. 
 Das Programm kann folgende Aufgaben ausführen:
