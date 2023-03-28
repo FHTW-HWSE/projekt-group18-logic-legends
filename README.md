@@ -58,18 +58,18 @@ Das System wartet nach erfolgreicher Ausgabe der Bestätigung auf neue Eingabe (
 
 **Akzeptanzkriterien:**
 
-- Given: das System befindet sich im Hauptmenü und wartet auf eine Eingabe
-When: der User gibt den Befehl ein, den Patienten mit Priorität in die Prioritätswarteschlange hinzufügen
-Then: der Patient wird zur Prioritätswarteschlange hinzugefügt
-- Given: ein Patient wird in die Prioritätswarteschlange hinzugefügt
-When: der Patient wird erfolgreich in die Prioritätswarteschlange aufgenommen
-Then: eine Erfolgsmeldung aber keine Sitzplatznummer wird ausgegeben
-- Given: ein Patient wird in die Prioritätswarteschlange hinzugefügt
-When: der Patient wird nicht erfolgreich in die Prioritätswarteschlange aufgenommen
-Then: eine Fehlermeldung wird ausgegeben
-- Given: ein Patient soll zur Prioritätswarteschlange hinzugefügt werden
-When: eine Erfolgs- oder Fehlermeldung wurde ausgegeben
-Then: das System kehrt in das Hauptmenü zurück
+- Given: das System befindet sich im Hauptmenü und wartet auf eine Eingabe <br/>
+When: der User gibt den Befehl ein, den Patienten mit Priorität in die Prioritätswarteschlange hinzufügen <br/>
+Then: der Patient wird zur Prioritätswarteschlange hinzugefügt <br/>
+- Given: ein Patient wird in die Prioritätswarteschlange hinzugefügt <br/>
+When: der Patient wird erfolgreich in die Prioritätswarteschlange aufgenommen <br/>
+Then: eine Erfolgsmeldung aber keine Sitzplatznummer wird ausgegeben <br/>
+- Given: ein Patient wird in die Prioritätswarteschlange hinzugefügt <br/>
+When: der Patient wird nicht erfolgreich in die Prioritätswarteschlange aufgenommen <br/>
+Then: eine Fehlermeldung wird ausgegeben <br/>
+- Given: ein Patient soll zur Prioritätswarteschlange hinzugefügt werden <br/>
+When: eine Erfolgs- oder Fehlermeldung wurde ausgegeben <br/>
+Then: das System kehrt in das Hauptmenü zurück <br/>
 
 ### User Story 3: Patient aufrufen
 Als Ärztin/Arzt möchte ich  im User Interface sehen, wer als nächstes an der Reihe ist, um die Person aufrufen und aus der Warteschlange entfernen zu können.
