@@ -91,10 +91,10 @@ Then: das System kehrt in den Status “Hauptmenü” zurück und der nächste P
 Als Beauftragter für ansteckende Krankheiten möchte ich mir die Namen aller Sitznachbarn eines Patienten ausgeben lassen können, um ein Contact-Tracing zu ermöglichen.
 
 **Requirements:**
-Nach Eingabe des Befehls zum Ausgeben der Sitznachbarn und des Namen des betreffenden Patienten soll eine Liste mit den Namen der Sitznachbarn ausgegeben werden. (System wechselt in den Status “Sitznachbarn ausgeben”)
-Die Daten der Patienten wurden in einem File gespeichert, dass zum ermitteln der Sitznachbarn ausgelesen wird
-Wurde dem Patienten kein Sitzplatz zugeordnet (Priorität Patienten) werden keine Sitznachbaren ausgegeben
-Nach erfolgreicher Ausgabe wartet das System auf eine neue Eingabe (System befindet sich im Status “Hauptmenü”)
+- Nach Eingabe des Befehls zum Ausgeben der Sitznachbarn und des Namen des betreffenden Patienten soll eine Liste mit den Namen der Sitznachbarn ausgegeben werden. (System wechselt in den Status “Sitznachbarn ausgeben”)
+- Die Daten der Patienten wurden in einem File gespeichert, dass zum ermitteln der Sitznachbarn ausgelesen wird
+- Wurde dem Patienten kein Sitzplatz zugeordnet (Priorität Patienten) werden keine Sitznachbaren ausgegeben
+- Nach erfolgreicher Ausgabe wartet das System auf eine neue Eingabe (System befindet sich im Status “Hauptmenü”)
 
 **Akzeptanzkriterien:**
 - Given: das System befindet sich im Hauptmenü <br/>
