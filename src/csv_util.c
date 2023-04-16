@@ -10,13 +10,11 @@
  *
  * @param file Filehandle of target csv-file to write to.
  * @param data Data that should be added as a new line to the csv-file.
- * @return int Returns 0 if written successfully, -1 if an error occurred.
+ * @return int Returns the number of successful written characters.
  */
 int write_csv(FILE *file, char *data)
 {
-    fprintf(file, data);
-
-    return 0;
+    return fprintf(file, data);
 }
 
 /**
