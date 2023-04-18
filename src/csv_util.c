@@ -1,9 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define BUFFER 255
-
-//fwrite und fread fseek für Speichergröße
 
 /**
  * @brief write_csv takes two parameters, a filehandle and a data-string and appends the data at the end of the file in a new line.
@@ -14,7 +13,15 @@
  */
 int write_csv(FILE *file, char *data)
 {
-    return fprintf(file, data);
+    char *extend_data = malloc(sizeof(data) + 2);
+    if (extend_data == NULL)
+    {
+        printf("Erros allocating memory!\n");
+        return 0;
+    }
+    strcpy(extend_data, data);
+    strcat(extend_data, "\n");
+    return fprintf(file, extend_data);
 }
 
 /**
@@ -25,6 +32,7 @@ int write_csv(FILE *file, char *data)
  */
 int print_csv(FILE *file)
 {
+    printf("1\n");
     char buffer[BUFFER];
 
     if (file == NULL)
@@ -34,12 +42,15 @@ int print_csv(FILE *file)
     }
     else
     {
+        printf("2\n");
         while ((fgets(buffer, BUFFER, file)) != NULL)
         {
+            printf("3\n");
             char *token = strtok(buffer, ",");
 
             while (token != NULL)
             {
+                printf("4\n");
                 printf(" %s", token);
                 token = strtok(NULL, ",");
             }
