@@ -91,22 +91,26 @@ size_t print_file(char *filename)
  *
  * @param first_person Name of the first person.
  * @param sec_person Name of the second person.
+ * 
+ * @return int Returns 0 if successful, -1 if neighbors could not be added.
  */
-void add_neighbors(char *first_person, char *sec_person)
+int add_neighbors(char *first_person, char *sec_person)
 {
     /* Add file extensions */
     char *new_first = add_csv_fileextension(first_person);
     char *new_sec = add_csv_fileextension(sec_person);
 
     /* Write neighbors in both directions */
-    write_to_csv(new_first, new_sec);
-    write_to_csv(new_sec, new_first);
+    if (!write_to_csv(new_first, new_sec) || !write_to_csv(new_sec, new_first))
+    {
+        return -1;
+    }
 
     /* Free allocated memory */
     free(new_first);
     free(new_sec);
 
-    return;
+    return 0;
 }
 
 void print_neighbors(char *name)
