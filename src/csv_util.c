@@ -113,6 +113,11 @@ int add_neighbors(char *first_person, char *sec_person)
     return 0;
 }
 
+/**
+ * @brief The print_neighbors function prints all the neighbors of a given person (per name) to stdout.
+ * 
+ * @param name The Name of the person whos neighbors should be printed.
+ */
 void print_neighbors(char *name)
 {
     /* Add file extension */
