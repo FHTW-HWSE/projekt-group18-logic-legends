@@ -1,7 +1,6 @@
-#pragma once
+//#pragma once
 
-#define MAXPATEINTLEN 50
-#define MAXPATIENTS 25
+
 
 void print_menu();
 
