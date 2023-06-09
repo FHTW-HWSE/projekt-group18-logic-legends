@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "patient_utils.h"
+#define MAXPATEINTLEN 50
+#define MAXPATIENTS 25
 
 // START 
 char patientNames[MAXPATIENTS][MAXPATEINTLEN];
@@ -30,7 +31,6 @@ void addPatientName()
     char new_patient[MAXPATEINTLEN];
     printf("\nBitte geben Sie den Namen des Patienten ein: ");
     fgets(new_patient, MAXPATEINTLEN, stdin);
-    // Remove trailing newline character
     new_patient[strcspn(new_patient, "\n")] = '\0';
     // Copy the new patient name to the patientNames array
     size_t num_patients = sizeof(patientNames) / sizeof(patientNames[0]);
