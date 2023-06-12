@@ -5,7 +5,7 @@ project(project3)
 add_executable(${PROJECT_NAME} ./src/main.c)
 add_subdirectory(./src/)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC csv_util)
+target_link_libraries(${PROJECT_NAME} PUBLIC utility)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ./build/ ./src/)
 

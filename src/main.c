@@ -75,38 +75,4 @@ do {
 
     return 0;
 
-   
-    // END SERT UTIL
-
-  /*  char *patient_name = getPatientName(2);
-    if (patient_name != NULL)
-    {
-        printf("Patient name at index 2: %s\n", patient_name);
-    }
-    else
-    {
-        printf("Failed to retrieve patient name at index 2.\n");
-    }
-
-    char *filename;
-    strcpy(filename, NAME);
-    strcat(filename, ".csv");
-    FILE *file = fopen(filename, "a+");
-    if (file == NULL)
-    {
-        printf("Error opening file!\n");
-    }
-
-    printf("written: %d chars\n", write_csv(file, "Vinzent,Karner"));
-    fprintf(file, "Vera,Karner");
-
-    fflush(file);
-
-    print_csv(filename);
-
-    fclose(file);
-*/
-
-
-
 }
