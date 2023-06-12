@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.24.3)
 
 project(project3)
 
+find_package(Catch2 REQUIRED)
+
+include(CTest)
+include(Catch)
+
 add_executable(${PROJECT_NAME} ./src/main.c)
 add_subdirectory(./src/)
 
