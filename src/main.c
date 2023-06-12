@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include "patient_utils.h"
 #include "assignRemove.h"
+
 #define NUM_SEATS 25
+#define NAME_LENGTH 255
 
 
 
@@ -13,7 +15,6 @@ int main(void)
 {   
     //initialisiere Feld mit den Namen der Patienten
     char** seats = malloc(NUM_SEATS * sizeof(char*));
-    char* test= "SAMUel";
     int choice;
 
     for (int i = 0; i < NUM_SEATS; i++) {
@@ -30,16 +31,16 @@ do {
         switch (choice) {
             case 1:
                 {
-                    char name[100];
-                    printf("Enter the patient's name: ");
+                    char name[NAME_LENGTH];
+                    printf("\nEnter the patient's name: ");
                     scanf("%s", name);
                     assignSeats(seats, name);
                     break;
                 }
             case 2:
                 {
-                    char name[100];
-                    printf("Enter the patient's name to remove: ");
+                    char name[NAME_LENGTH];
+                    printf("\nEnter the patient's name to remove: ");
                     scanf("%s", name);
                     removePatient(seats, name);
                     break;
@@ -51,17 +52,21 @@ do {
                 }
             case 4:
                 {
-                    // Implement the logic to show seat neighbors
+                    char name[NAME_LENGTH];
+                    printf("\nEnter the patient's name whos neighbors should be printed: ");
+                    scanf("%s", name);
+                    printf("\nSitznachbarn von %s:\n\n", name);
+                    print_neighbors(name);
                     break;
                 }
             case 5:
                 {
-                    printf("The program will be ended.\n");
+                    printf("\nThe program will be ended.\n");
                     break;
                 }
             default:
                 {
-                    printf("Invalid input. Please choose again.\n");
+                    printf("\nInvalid input. Please choose again.\n");
                     break;
                 }
         }

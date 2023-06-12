@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXPATEINTLEN 50
+#define MAXPATEINTLEN 255
 #define MAXPATIENTS 25
 
 // START 
