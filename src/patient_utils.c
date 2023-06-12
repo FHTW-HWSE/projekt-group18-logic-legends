@@ -34,7 +34,7 @@ char *getPatientName(int sitzplatz)
 {
     if (sitzplatz >= MAXPATIENTS || sitzplatz < 0)
     {
-        printf("Error: Sitzplatz gibts nicht\n");
+        printf("Error: Sitzplatz existiert nicht\n");
         return NULL;
     }
     return patientNames[sitzplatz];
