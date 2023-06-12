@@ -8,13 +8,6 @@
 // START 
 char patientNames[MAXPATIENTS][MAXPATEINTLEN];
 
-/**
- * @brief write_csv takes two parameters, a filehandle and a data-string and appends the data at the end of the file in a new line.
- *
- * @param patienname
- * @return int Returns the number of successful written characters.
- */
-
 void print_menu()
 {
     printf("\n--- Notaufnahme-Verwaltungsprogramm ---\n");
