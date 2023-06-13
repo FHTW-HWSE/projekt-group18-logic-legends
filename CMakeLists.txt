@@ -10,7 +10,7 @@ include(Catch)
 add_executable(${PROJECT_NAME} ./src/main.c)
 add_subdirectory(./src/)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC utility)
+target_link_libraries(${PROJECT_NAME} PUBLIC utility Catch2::Catch2)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ./build/ ./src/)
 
