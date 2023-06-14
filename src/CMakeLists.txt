@@ -1,1 +1,4 @@
-add_library(csv_util csv_util.c)
+add_library(utility
+                    csv_util.c
+                    assignRemove.c
+                    patient_utils.c)

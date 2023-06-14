@@ -1,60 +1,130 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-
-#define BUFFER 255
+#include <stdlib.h>
 
 /**
- * @brief write_csv takes two parameters, a filehandle and a data-string and appends the data at the end of the file in a new line.
+ * @brief The add_csv_fileextension function takes a given string, adds the ".csv" file extension to it and returns the new string/filename. There will be memory allocated which has to be freed after usage.
  *
- * @param file Filehandle of target csv-file to write to.
- * @param data Data that should be added as a new line to the csv-file.
- * @return int Returns the number of successful written characters.
+ * @param name Name of the file without the file extension.
+ * @return char* Returns the filename with the appended ".csv" file extension.
  */
-int write_csv(FILE *file, char *data)
+char *add_csv_fileextension(char *name)
 {
-    char *extend_data = malloc(sizeof(data) + 2);
-    if (extend_data == NULL)
-    {
-        printf("Erros allocating memory!\n");
-        return 0;
-    }
-    strcpy(extend_data, data);
-    strcat(extend_data, "\n");
-    return fprintf(file, extend_data);
+    /* Allocating memory for new string */
+    char *filename = calloc(strlen(name) + 5, sizeof(char));
+
+    /* Copy the name into the new string and append the ".csv" file extension to it */
+    strcpy(filename, name);
+    strcat(filename, ".csv");
+
+    return filename;
 }
 
 /**
- * @brief Prints the content of a given csv-file. The filehandle to the csv-file must be given in the parameter.
+ * @brief The write_to_csv function appends given data to a given file.
  *
- * @param file Filehandle of the csv-file that should be printed.
- * @return int Returns 0 if successfully printed, -1 if an error occurred.
+ * @param filename The name of the file to write to.
+ * @param data The data that should be written.
+ * @return size_t Returns the number of characters written including the new line character written at the end of the data.
  */
-int print_csv(FILE *file)
+size_t write_to_csv(char *filename, char *data)
 {
-    printf("1\n");
-    char buffer[BUFFER];
-
-    if (file == NULL)
+    /* Open the file */
+    FILE *file = fopen(filename, "a");
+    if (!file)
     {
-        printf("\nNo file given!\n");
+        // printf("Error: An error occured while opening file \"%s\"!\n", filename);
+        return 0;
+    }
+
+    /* Counter of written data */
+    size_t cnt = 0;
+
+    /* Write data to file */
+    cnt = fwrite(data, sizeof(char), strlen(data), file);
+    cnt += fwrite("\n", sizeof(char), 1, file);
+
+    /* Close the file */
+    fclose(file);
+
+    return cnt;
+}
+
+/**
+ * @brief The print_file function prints the content of a file with a given name to the stdout.
+ *
+ * @param filename The name of the file which should be printed.
+ * @return size_t Returns the number of characters read and printed from the file.
+ */
+size_t print_file(char *filename)
+{
+    /* Open the file */
+    FILE *file = fopen(filename, "r");
+    if (!file)
+    {
+        // printf("Error: An error occured while opening file \"%s\"!\n", filename);
+        return 0;
+    }
+
+    /* Get the size of the file */
+    fseek(file, 0, SEEK_END);
+    size_t file_size = ftell(file);
+    rewind(file);
+
+    /* Allocate buffer */
+    char *buffer = calloc(1, file_size);
+
+    /* Read the data from file */
+    fread(buffer, file_size, 1, file);
+
+    /* Print the data */
+    printf("%s", buffer);
+
+    /* Close the file */
+    fclose(file);
+
+    return file_size;
+}
+
+/**
+ * @brief Adds the first person to the list of neighbors of the second person and vice versa.
+ *
+ * @param first_person Name of the first person.
+ * @param sec_person Name of the second person.
+ * 
+ * @return int Returns 0 if successful, -1 if neighbors could not be added.
+ */
+int add_neighbors(char *first_person, char *sec_person)
+{
+    /* Add file extensions */
+    char *new_first = add_csv_fileextension(first_person);
+    char *new_sec = add_csv_fileextension(sec_person);
+
+    /* Write neighbors in both directions */
+    if (!write_to_csv(new_first, sec_person) || !write_to_csv(new_sec, first_person))
+    {
         return -1;
     }
-    else
-    {
-        printf("2\n");
-        while ((fgets(buffer, BUFFER, file)) != NULL)
-        {
-            printf("3\n");
-            char *token = strtok(buffer, ",");
 
-            while (token != NULL)
-            {
-                printf("4\n");
-                printf(" %s", token);
-                token = strtok(NULL, ",");
-            }
-        }
-    }
+    /* Free allocated memory */
+    free(new_first);
+    free(new_sec);
+
     return 0;
+}
+
+/**
+ * @brief The print_neighbors function prints all the neighbors of a given person (per name) to stdout.
+ * 
+ * @param name The Name of the person whos neighbors should be printed.
+ */
+void print_neighbors(char *name)
+{
+    /* Add file extension */
+    char *filename = add_csv_fileextension(name);
+
+    if (!print_file(filename))
+    {
+        printf("%s had no neighbors.\n", name);
+    }
 }
