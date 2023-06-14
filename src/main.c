@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include "patient_utils.h"
 #include "assignRemove.h"
+
 #define NUM_SEATS 25
+#define NAME_LENGTH 255
 
 int main(void)
 {

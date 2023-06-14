@@ -2,18 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXPATEINTLEN 50
+#define MAXPATEINTLEN 255
 #define MAXPATIENTS 25
 
 // START 
 char patientNames[MAXPATIENTS][MAXPATEINTLEN];
-
-/**
- * @brief write_csv takes two parameters, a filehandle and a data-string and appends the data at the end of the file in a new line.
- *
- * @param patienname
- * @return int Returns the number of successful written characters.
- */
 
 void print_menu()
 {
@@ -41,7 +34,7 @@ char *getPatientName(int sitzplatz)
 {
     if (sitzplatz >= MAXPATIENTS || sitzplatz < 0)
     {
-        printf("Error: Sitzplatz gibts nicht\n");
+        printf("Error: Sitzplatz existiert nicht\n");
         return NULL;
     }
     return patientNames[sitzplatz];
