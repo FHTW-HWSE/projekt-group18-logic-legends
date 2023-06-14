@@ -133,11 +133,16 @@ void callPatient(char **seats, char **queue)
 
     // Check if the queue is empty
     if (queue[0] != NULL) {
+        
         printf("Calling patient: %s\n", queue[0]);
+        
 
         // Find the matching name in the seats array and set it to NULL
         for (int i = 0; i<NUM_SEATS; i++) {
+            
+            if(seats[i]!=NULL)
             if (strcmp(seats[i], queue[0]) == 0) {
+                
                 seats[i] = NULL;
                 free(seats[i]);
                 break;
